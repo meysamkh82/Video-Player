@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>function testConnectionSpeed(imageUrl, imageSizeInBytes) {
+        const startTime = new Date().getTime(); // زمان شروع
+        const img = new Image();
+    
+        img.onload = function () {
+            const endTime = new Date().getTime(); // زمان پایان
+            const duration = (endTime - startTime) / 1000; // زمان به ثانیه
+    
+            const speedBps = imageSizeInBytes / duration; // بیت بر ثانیه
+            const speedKbps = speedBps / 1024;
+            const speedMbps = speedKbps / 1024;
+    
+            console.log(`⏱️ زمان دانلود: ${duration.toFixed(2)} ثانیه`);
+            console.log(`🚀 سرعت: ${speedKbps.toFixed(2)} KB/s`);
+            console.log(`💡 سرعت: ${speedMbps.toFixed(2)} MB/s`);
+        };
+    
+        img.onerror = function () {
+            console.error("❌ مشکلی در بارگذاری تصویر به وجود آمد.");
+        };
+    
+        // جلوگیری از کش شدن عکس توسط مرورگر
+        img.src = `${imageUrl}?t=${new Date().getTime()}`;
+    }
+    testConnectionSpeed('http://localhost:3000', 4573184);    
+    </script>
+</body>
+</html>

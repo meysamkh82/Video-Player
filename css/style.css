@@ -1,0 +1,617 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    box-sizing:border-box;
+    font-family: sans-serif;
+}
+
+.replay-svg{
+    width:1.3rem !important;
+    height:1.3rem !important;
+    fill:none !important;
+}
+.vidFrame{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    box-shadow: 0 0 18px 1px rgba(0, 0, 0, 0.23),0 0 28px 1px rgba(0, 0, 0, 0.23);
+    margin:10px auto;
+    position: relative; 
+    z-index:1;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);   
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%; 
+     height: calc(.5625 * 70vw); 
+    /*.5625 for 4:3 */
+    max-width: 1920px;
+    max-height:1080px;
+    min-width: 320px;
+    min-height: 180px;
+    /* width: 70%; */
+    /* transition: all .1s; */
+    /* aspect-ratio: 16 / 9; */
+}
+
+
+#vid1{
+    border:none !important;
+    outline: none !important;
+    width: 100% !important;
+    z-index: 2;
+    position: absolute !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+    background: transparent !important;
+    /* clip-path: inset(1px 1px) */
+    aspect-ratio: 16 / 9;
+}
+
+
+.vidBar{
+    margin:0 auto;
+position: absolute;bottom:0; right: 0; left: 0px; width: 97%; color:white;
+height: 50px;
+opacity: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+justify-items: center;
+transition: all .3s;
+transition-timing-function: ease-in;
+z-index: -1;
+}
+
+.vidBar:-moz-full-screen { position: fixed; }
+.vidBar:-webkit-full-screen { position: fixed;
+    }
+.vidBar:-ms-fullscreen { position: fixed; }
+.vidBar:fullscreen { position: fixed; }
+
+/* video::-webkit-media-controls-enclosure {
+ display:none !important;  
+
+} */
+.vidFrame:fullscreen .vidBarTop{
+  z-index: 10;
+  opacity: 0.9;
+}
+.vidFrame:fullscreen .title-vidbar-top{
+display: flex;
+}
+.vidFrame:fullscreen .title-progress{
+    font-size: 1.03rem;
+}
+.vidBar::after{
+    content: '';
+    position: absolute;
+    /* top:10vh; */
+    bottom:-100%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 150px 2px rgba(0, 0, 0, 0.555),0 0 80px 2px rgba(0, 0, 0, 0.555),0 0 80px 2px rgba(0, 0, 0, 0.555),0 0 100px 2px rgba(0, 0, 0, 0.555)
+    ,0 0 120px 1px rgba(0, 0, 0, 0.555),0 0 120px 1px rgba(0, 0, 0, 0.555);
+    /* ,0 0 120px 1px rgb(0, 0, 0),0 0 120px 1px rgb(0, 0, 0) */
+    z-index:-1;
+}
+button{
+cursor: pointer;
+transition: all .2s;
+}
+.exitScreen{
+display:none;
+}
+.skip-forward{
+    height: 1.5rem;
+    width: 1.5rem;
+    /* stroke-width: 2px; */
+    fill: white;
+    margin:0 10px;
+    cursor: pointer;
+    stroke:none !important; 
+}
+.play{
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: white;
+    margin:0 10px;
+    cursor: pointer;
+}
+.times{
+
+font-size:0.9rem;
+font-weight: bold;
+font-family:sans-serif;
+margin-left: 12px;
+color:rgba(255, 255, 255, 0.905)
+}.slash-time{
+    font-size: .95rem;
+    margin:0 5px;
+  
+}
+.btns-vidbar-bottom{
+/* position: absolute; */
+/* left:40%;
+bottom: 2px; */
+display: flex;
+align-items:center;
+/* padding:0 5px; */
+height: 100%;
+}
+/*  */
+.setting{
+/* position:absolute;
+left:60%; */
+display: flex;
+/* bottom: 2px; */
+align-items: center;
+justify-content: space-between;
+height: 100%;
+padding:0 5px;
+}.prog{
+width: 900px;
+margin:100px auto;
+}
+.btnCenterEffect{
+position: absolute;
+width: 50px;
+height: 50px;
+opacity: 0;
+/* padding-left: 3px; */
+background-color: rgb(20, 20, 20);
+z-index: 3;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+transition: all .4s;
+}.btnCenterEffect-svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill:white;
+}
+.btnBF{
+position: absolute;
+width: 56px;
+height: 56px;
+opacity: 0;
+background-color: rgb(20, 20, 20);
+z-index: 3;
+display: flex;
+flex-direction: column;
+font-family: sans-serif;
+justify-content:center;
+font-size: 0.68rem;
+align-items: center;
+border-radius: 50%;
+transition: all .4s;
+color: #e2e2e2;
+overflow: hidden;
+}
+.btnForward{
+    flex-direction: column-reverse;
+    right:60px;
+}.btnBackward{
+    left:60px;
+}
+.bf-effect-svg{
+    fill: #cbcbcb;
+    width:1.6rem;
+    height:1.6rem;
+}
+.btnPlayPoster{
+position: absolute;
+width: 6rem;
+height: 6rem; 
+z-index: 13;
+border:none;
+cursor: pointer;
+background-color: transparent;
+display: none;
+justify-content: center;
+align-items: center;
+
+}.play-poster-svg{
+    fill: red;
+    transition: all .2s;
+    width: 100%;
+    height: 100%;
+}
+.play-poster-svg:hover{
+    filter:drop-shadow(0px 5px 20px red);
+
+    
+}
+.showBtnPoster{
+    display: flex;
+}
+@keyframes ani {
+    0%{
+        opacity: .8;
+        transform: scale(1);
+    }100%{
+    
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+@keyframes ani2 {
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }100%{
+    
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+@keyframes loading {
+    from{
+        transform: rotate(0deg);
+  
+    }to{
+        transform: rotate(360deg);
+     
+    }
+}
+
+.select-selected {
+
+    font-size:0.9rem;
+    color:white;
+    text-align: center;
+    padding:3px 5px;
+    /* display: none; */
+    margin:0 2px; 
+    }
+    .speed:hover{
+    background-color: rgba(223, 223, 223, 0.13);
+    
+    }
+    /* Style the arrow inside the select element: */
+    
+    
+    /* Point the arrow upwards when the select box is open (active): */
+    
+    
+    /* style the items (options), including the selected item: */
+    .select-items div,.select-selected {
+    color: #ffffff;
+    /* padding: 8px 16px; */
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    
+    }
+    
+    /* Style items (options): */
+    .select-items {
+    position: absolute;
+    background-color: rgba(5, 5, 5, 0.951);
+    bottom: 35px;
+    left: -2px;
+    right: 0;
+    z-index: 99;
+    text-align: center;
+    border-radius: 5px;
+    transition: all .2s;
+    /* padding:5px 12px; */
+    /* text-align: center; */
+    }
+    
+    /* Hide the items when the select box is closed: */
+    .select-hide {
+    display: none;
+    }
+    
+    .select-items div:hover, .same-as-selected {
+    background-color: rgba(172, 0, 0, 0.612);
+    }
+    .select-items div{
+        border:1px solid rgba(228, 228, 228, 0.485);
+        padding:2px 6px;
+        font-size:.9rem;
+    }
+    .loading{
+        display: none;
+        position: absolute;
+        z-index: 3;
+        color:white;
+        opacity: 1;
+    }.loading-circle{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 51%;
+        border:4px solid rgba(255, 255, 255, 0);
+        border-top-color:rgb(255, 255, 255);
+        border-left-color:rgb(255, 255, 255);
+        border-bottom-color:  rgb(255, 255, 255);
+        display: inline-block;
+        animation:loading .8s ease infinite;
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.692));
+    } .loading-show{
+        display: block;
+    }
+    .btn-video-player{
+        margin:0 10px;
+        cursor: pointer;
+        /* transition: all .4s; */
+    }
+    .btn-screenshot{
+        fill: white;
+        /* stroke: white; */
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    .div-btn-subtitle{
+        width:1.7rem;
+        height: 1.7rem;
+        position: relative;
+        margin:0 10px;
+        overflow: hidden;
+    }
+    .div-btn-subtitle::before{
+        content: '';
+        position: absolute;
+        left:-100%;
+        bottom:0;
+        transition: left .2s;
+        width: 80%;
+        height: 3px;
+        background-color: rgb(255, 13, 13);
+        border-radius: 10px;
+    }
+    .div-btn-subtitle.onsubtitle::before{
+        left:11%;
+    }
+    .btn-subtitle{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        fill:white;
+    }
+    .btn-disable{
+        fill:rgba(217, 217, 217, 0.618);
+    }
+    .btn-setting{
+        transition: all .25s ease-in;
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: white;
+        transform: rotate(0deg);
+   
+    }
+    .btn-picture-in-picture{
+        width:1.6rem;
+        height: 1.6rem;
+        fill:white;
+    }
+    .display-mode{
+        margin:0 12px;
+        fill:none;
+        stroke: white; 
+        cursor: pointer;
+    }
+    .cinema-mode{
+        stroke-width: 2.2px;
+        width:1.6rem;
+        height:1.6rem;
+    }.normal-mode{
+        width:1.8rem;
+        height: 1.8rem;
+        stroke-width: 4px;
+    }
+    .display-mode > span{
+        border-radius: 2px;
+        border:2.8px solid rgb(255, 255, 255);
+        cursor: pointer;
+        transition: all .2s;
+    } 
+    .btn-collapse{
+        width: 2.55rem;
+        height: 2.55rem;
+        fill:white;
+        margin:0 0 ;
+    }
+    .btn-expand{
+        width: 1.65rem;
+        height: 1.65rem;
+        fill:none;
+        stroke-width: 2px;
+        stroke: white;
+    }
+    @keyframes vidbarAni {
+        0%{
+            bottom:0
+        }100%{
+            bottom: 0;
+        }
+    }
+.btnMenuUp{
+    position: absolute;
+    left:20%;
+    width: 60%;
+    height: 100%;
+    background-color:rgba(0, 255, 255, 0.393) ;
+    z-index: 4;
+/* display: none; */
+}
+.vidBarTop{
+    position: absolute;
+    margin:0 auto;
+    position: absolute;top:0; width: 100%; color:white;
+    /* height: 50px; */
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s;
+    display: flex;
+    height: 50px;
+    /* overflow: hidden; */
+    
+}.title-vidbar-top{
+   
+    display: flex;
+    display: none;
+    align-items: center;
+    padding:20px 15px;
+    height: 100%;
+    width: 70%;
+    font-size:1.5rem;
+}
+.btn-vidbar-top{
+    display: none;
+}
+.btns-vidbar-top{
+    margin-left: auto;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.vidBarTop::after{
+    content: '';
+    position: absolute;
+    /* bottom:10vh; */
+    top:-100%;
+    left:0;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.555),0 0 80px 2px rgba(0, 0, 0, 0.555),0 0 80px 2px rgba(0, 0, 0, 0.555),0 0 100px 2px rgba(0, 0, 0, 0.555)
+    ,0 0 120px 1px rgba(0, 0, 0, 0.555),0 0 120px 1px rgba(0, 0, 0, 0.555);
+    z-index:-1;
+}
+.skipTabligh{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:0;
+    background-color: rgba(0, 0, 0, 0.814);
+    color:white;
+    font-size: 1rem;
+    font-weight: 600;
+    justify-content: center;
+    align-items:center;
+    font-family: sans-serif;
+    border-radius: 6px 0 0 6px;
+    z-index: 2147483648 !important;
+    width: 120px;
+    padding:5px;
+    height: 50px;
+    outline: none;
+    border:none;
+    display: none;
+}.timeTabligh{
+    font-size: 1.1;
+    margin-left: 5px;
+    font-weight: 900;
+}
+.btnPhonePlay{
+    display: none;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.553);
+    position: absolute;
+    z-index: 10; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+}.center-btn-phone-svg {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: white;
+    margin-left: -1px;
+}
+.center-btn-phone-svg.play-phone-svg{
+    margin-left: 2px;
+
+}
+.btnPhoneSkip{
+    /* display: flex; */
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.553);
+    transition: all .3s;
+    position: absolute;
+    z-index: 10; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}.btnPhoneSkipBackward{
+    left:20%;
+}.btnPhoneSkipForward{
+    right: 20%;
+}.skip-backward-phone-svg,.skip-forward-phone-svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: white;
+}.skip-backward-phone-svg{
+    transform: rotate(180deg);
+}
+
+.btnphone-BF{
+    font-size: 1rem;
+    color:white;
+    height: 100%;
+    width:50%;
+    position: absolute;
+    top:0;
+    z-index: 4;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.686);
+    align-items: center;
+    opacity: 0;
+}
+.btnPhoneBackward{
+    left:0;  
+    clip-path: circle(71.3% at 0 51%);
+    justify-content: left;
+}
+.btnPhoneForward{
+    right:0;
+    clip-path: circle(71.3% at 100% 51%);
+    justify-content: right;
+}
+.btnphoneBF-svg{
+    fill: #cbcbcb;
+    margin:0 15px;
+    width: 2.2rem;
+    height: 2.2rem;
+}
+.hidePhoneFBandSpan{
+    display: none;
+}
+.error-container{
+    position: absolute;
+    background-color: rgba(52, 52, 52, 0.921);
+    z-index: 100;
+    border-radius: 6px;
+    padding: 10px 18px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.show-error-container{
+    display: flex;
+}
+.error-title{
+    margin:0 5px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
+.error-svg{
+    width: 1.7rem;
+    height: 1.7rem;
+}

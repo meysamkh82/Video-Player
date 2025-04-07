@@ -1,0 +1,112 @@
+.custom-slider {
+    width: 100%;
+    height: 3px;
+    background: #d3d3d3;
+    position:absolute;
+    left:0;
+    bottom: 50px;
+    z-index:1;
+    cursor: pointer;
+    transition: height 0.15s;
+    touch-action: none; /* برای جلوگیری از اسکرول پیش‌فرض */
+}
+
+.custom-slider:hover{
+  height: 6px;
+}
+.custom-slider:active{
+  height: 6px;
+}
+.custom-slider:hover .thumb{
+  box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.299);
+ 
+}
+.custom-slider-for-hover{
+  width:20%;
+  height:15px;
+  position: absolute;
+  left:50%;
+  bottom: 100%;
+  z-index: 4;
+  display: none;
+}
+.track {
+    height: 100%;
+    background: red;
+    position: absolute;
+    width: 0;
+    z-index: 3;
+    
+}
+.load-progress {
+    height: 100%;
+    background: #ffffff;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: width .09s linear;
+}
+.thumb {
+  /* display: none; */
+    width: 15px;
+    height: 15px;
+    background: rgb(255, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0;
+    z-index: 4;
+    transition: all .05s linear;
+}
+/* .thumb:active:has(.custom-slider){
+  height: 20px;
+} */
+.snapshots{
+  position: absolute;
+  left:0;bottom: -200px;
+  z-index: -1;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  row-gap: 5px;
+  display: flex;
+  opacity: 0;
+  max-width: 380px;
+  min-width: 60px;
+  width: 25%;
+  transition: opacity .2s;
+  /* height: calc(.5625 * 20vw); .5625 for 4:3 */
+
+}
+.snapshot{
+box-shadow: 0 0 5px 0 black,0 0 7px 0 black,0 0 10px 0 black;
+  border:1.8px solid white;
+  overflow: hidden;
+  border-radius: 6px;
+  /* z-index: 2423423424; */
+  width: 100%;
+  /* height: calc(.5625 * 100%);  */
+}
+#vidSnapshot{
+  width:100%;
+  height: 100%;
+  border-radius: 6px;
+
+}
+.title-progress{
+
+    font-weight: bold;
+    color:white;
+    text-shadow: 0 0px 8px black,0 0px 12px black,0 0px 12px black,0 0px 12px black;
+    font-family: sans-serif;
+    /* position:absolute; */
+    bottom: 5px;
+    /* left:0; */
+    padding:5px;
+    border-radius: 6px;
+    font-size: 0.92rem;
+    /* z-index: 43242342; */
+}

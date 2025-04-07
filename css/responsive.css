@@ -1,0 +1,210 @@
+
+@media screen and (min-width:1920px){
+ .subtitle{
+    font-size:1.5rem;
+ }
+}
+@media screen and (min-width:1280px) and (max-width:1919px){
+    .vidFrame:fullscreen .subtitle{
+        font-size: 1.5rem;
+      }
+  .subtitle{
+    font-size:1.2rem;
+  }
+}
+
+@media screen and (min-width:921px) and (max-width:1279px){
+    .subtitle{
+        font-size:1.1rem;
+      } 
+}
+@media screen and (max-width:992px)  {
+    .display-mode{
+        display: none !important;
+    }
+}
+@media screen and (max-width:920px){
+    .vidFrame{
+        margin:0 ;
+        width: 100%;
+        height: calc(.5625 * 100vw);
+        border-radius: 2px 2px 0 0;
+    }
+    .vidBarTop{
+        width:96%;
+        opacity: 0;
+        z-index: -1;        
+    }.title-vidbar-top{
+        display: none;
+        padding:10px 5px;
+        font-size:1rem;
+    }.btns-vidbar-top{
+        width: 100%;
+    }
+    .vidFrame:fullscreen .title-vidbar-top{
+       display: flex;
+       width: 60%;
+      }
+    .vidFrame:fullscreen .btns-vidbar-top{
+       width: 40%;
+      }
+    .vidBar{
+         width: 96%; 
+    }
+    .times{
+        font-size:.8rem;
+    }.slash-time{
+        font-size: .8rem;
+        margin:0 4px;
+        margin-left:5px;
+    }
+    .custom-slider{
+        height: 4px;
+      }
+    /* .volume-div{
+        display: none;
+    } */
+    .volume-img{
+        height: 1.4rem;
+        width: 1.4rem;
+        margin:0 10px;
+        margin-right: 4px;
+    }.volumeInput{
+       width: 40px !important;
+       margin:0;
+       opacity: 1;
+    }  .volume-div:hover .volumeInput{
+        width: 40px !important;
+    }input[type="range"]::-webkit-slider-thumb { 
+        height: 10px !important;
+        width: 10px !important;
+      }
+      input[type="range"]::-moz-range-thumb {
+        height: 10px !important;
+        width: 10px !important;
+      }
+    .btn-vidbar-top{
+        display: block;
+        margin:0 10px;
+        /* font-size:1.6rem; */
+    }
+    .btn-vidbar-bottom{
+        display: none;
+    }
+    /* .btns-vidbar-bottom{
+        
+    } */
+    .btn-screen{
+        margin:0;
+    }
+    .btnPhonePlay{
+        opacity: 0;
+        z-index:-1;
+        display: flex;
+    }
+    .btnPhoneSkip{
+        display: flex;
+        opacity: 0;
+        z-index:-1;
+    }
+    .skip-forward{
+      display: none;
+    }
+    .play{
+        margin:0 6px;
+        /* display: none; */
+    }
+    .display-mode{
+        display: none ;
+    }.next5s{
+        display: none;
+    }.pervious5s{
+        display: none;
+    }.btnCenterEffect{
+        display: none;
+    }
+  
+    .btnPlay{
+        width: 30px;
+        height: 30px;
+        font-size:.9rem;
+    }.btnBF{
+        display: flex;
+    }
+    .btnphone-BF{
+        display: flex;
+    }
+    
+    .hide-phone-bf{
+        display:none
+    }
+    .subtitle{
+        font-size:1.05rem;
+    }
+    .setting-menu{
+        max-height: 230px !important;
+    }
+}
+@media screen and (max-width:768px){
+    .subtitle{
+        font-size:0.95rem;
+    }
+}
+@media screen and (max-width:576px) {
+    .setting-menu{
+        max-height: 200px !important;
+        /* max-width: 220px ; */
+        width: 100%;
+        /* min-width: 160px; */
+        bottom: 5px;
+        right:50%;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .item-panel-main{
+        padding:7px 9px;
+    } 
+    .panel .menu2-item{
+        color:#e8e8e8;
+        padding:5px 14px;
+        font-size:0.9rem
+    
+    }.svg-item-panel-image{
+        height: 1.25rem;
+        width:1.25rem;
+    }
+   
+    .item-back{
+        padding:6px 8px;
+      
+    }
+    .back-svg{
+        height: 0.95rem;
+        width:0.95rem;;
+    }
+    
+    .item-panel-name{
+        margin:0 4px;
+        font-size:.85rem
+    }
+    
+    .selected-item{
+        font-size:.75rem;
+        color:white;
+        margin:0 5px;
+    }
+    .subtitle{
+        font-size:.82rem;
+    }
+    .vidBar{
+        width: 94%; 
+        height: 45px;
+   }.custom-slider {
+   bottom:45px;
+}
+    .btn-play{
+        margin: 0 2px ;
+        padding:0;
+    }
+  
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>videoPlayer</title>
+    <link rel="stylesheet" href="./css/customRange.css">
+    <link rel="stylesheet" href="./css/rangeVolume.css">
+    <link rel="stylesheet" href="./css/rangeProgress.css">
+    <link rel="stylesheet" href="./css/settingVideo.css">
+    <link rel="stylesheet" href="./css/screenshot.css">
+    <link rel="stylesheet" href="./css/subtitle.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+   <div class="vidFrame">
+        <video id="vid1" class="vid"  poster="./src/programer4.jpg" preload="metadata" ><!--data-autoplay="true"-->
+            <!-- <source data-label="tabligh" class="source-tabligh" src="./src/tabligh1.mp4"> -->
+              <!-- <source data-label="720p"  src="./src/laptop.mp4" data-default="true"> -->
+              <!-- <source data-label='720p' src="./src/pichidegiZaman.mp4" data-default="true"/> -->
+             <source data-label='1080p' src="./src/react-qorbani.mp4" data-default="true"/>
+               <source data-label='720p' src="./src/720p.mp4" data-default="false"/>
+              <source data-label="480p" src="./src/480p.mp4" data-default="false"/>
+              <source data-label='360p' src="./src/360p2.mp4" data-default="false"/>
+              <source data-label='240p' src="./src/240p.mp4" data-default="false"/>
+              <source data-label='144p' src="./src/144p.mp4" data-default="false"/>
+          </video>
+        <div class="vidBar">
+            <!-- <div class="progress"> -->
+                <div class="custom-slider">
+                    <div class="custom-slider-for-hover"></div>
+                    <div class="load-progress"></div>
+                    <div class="track"></div>
+                    <div class="thumb"></div>
+                </div>
+                <div class="snapshots">
+                    <div class="title-progress"></div>
+                    <div class="snapshot">
+                        <video id="vidSnapshot" class="vid2" >
+                        </video>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <div class="btns-vidbar-bottom">
+                <svg class="play"><use href="#play-svgrepo-com" ></use></svg>
+                <svg class="skip-forward"><use href="#skip-forward-svgreop-com"></use></svg>
+                <div class="volume-div">
+                    <svg class="volume-img"><use href="#volume-up-outline-svgrepo-com" ></svg>
+                
+                    <input type="range" class="volumeInput" step="any" min="0" max="100" id="range" title="volume">
+                    <span class="valueVolume"></span>
+                </div>
+                <div class="times">
+                    <span class="current">00:00</span><span class="slash-time">/</span><span class="duration">00:00</span>
+                </div>
+            </div>
+            <div class="setting">
+                    <svg class="btn-video-player btn-screenshot btn-vidbar-bottom"><use href="#screenshot-svgrepo-com"></use></svg>
+                    <div class="div-btn-subtitle btn-vidbar-bottom">   
+                        <svg class="btn-video-player btn-subtitle "><use href="#subtitle-svgreop-com2"></use></svg>
+                    </div>
+                    <svg class="btn-video-player btn-setting btn-vidbar-bottom"><use href="#setting-svgrepo-com"></use></svg>
+
+                    <svg class="display-mode cinema-mode"><use href="#cinema-mode-svgreop-com"></use></svg>
+                
+                    <svg class="btn-video-player btn-picture-in-picture btn-vidbar-bottom"><use href="#picture-in-picture"></use></svg>
+               
+                    <svg class="btn-video-player btn-screen btn-expand"><use href="#expand-svgrepo-com"></use></svg>
+                    <!-- <svg class="btn-video-player btn-screen btn-collapse"><use href="#collapse-svgrepo-com"></use></svg> -->
+            </div>  
+        </div>
+
+
+
+
+        <div class="setting-menu hide-menu">
+            <div class="panel panel-main ">
+                 <div class="item-panel-main">
+                    <div class="itemPanelNameAndImages">
+                        <div>
+                            <svg class="svg-item-panel-image"><use href="#equalizer-filter-filtering-svgrepo-com"></use></svg>
+                        </div>
+                        <span class="item-panel-name">Quality</span>
+                    </div>
+                    <div class="selectedAndNextSvg">
+                        <span class="selected-quality selected-item">720p</span>
+                        <span><svg class="next-svg"><use href="#right-next-navigation-svgrepo-com"></use></svg></span>
+                    </div>
+                </div>
+                 <div class="item-panel-main">
+                    <div class="itemPanelNameAndImages">
+                        <div>
+                            <svg class="svg-item-panel-image"><use href="#speed-alt-svgrepo-com"></use></svg>
+                        </div>
+                        <span class="item-panel-name">Speed</span>
+                    </div>
+                    <div class="selectedAndNextSvg">
+                        <span class="selected-speed selected-item">1</span>
+                        <span><svg class="next-svg"><use href="#right-next-navigation-svgrepo-com"></use></svg></span>
+                    </div>
+                </div>
+                 <div class="item-panel-main">
+                    <div class="itemPanelNameAndImages">
+                        <div>
+                            <svg class="svg-item-panel-image"><use href="#subtitle-svgrepo-com"></use></svg>
+                        </div>
+                        <span class="item-panel-name">Subtitle</span>
+                    </div>
+                    <div class="selectedAndNextSvg">
+                        <span class="selected-subtitle selected-item">None</span>
+                        <span><svg class="next-svg"><use href="#right-next-navigation-svgrepo-com"></use></svg></span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-sub panel-quality">
+                 <ul class="menu2">
+                     <li class="item-back">  <svg class="back-svg"><use href="#left-navigation-back-svgrepo-com"></use></svg> Back</li>
+                 </ul>
+            </div>
+            <div class="panel panel-sub panel-subtitle">
+             <ul class="menu2">
+                 <li class="item-back"> <svg class="back-svg"><use href="#left-navigation-back-svgrepo-com"></use></svg> Back</li>
+                 
+             </ul>
+            </div>
+            <div class="panel panel-sub panel-speed">
+             <ul class="menu2">
+                 <li class="item-back "> <svg class="back-svg"><use href="#left-navigation-back-svgrepo-com"></use></svg> Back</li>
+                  <li class="menu2-item speed-item" data-value="2">2</li>
+                  <li class="menu2-item speed-item" data-value="1.75">1.75</li>
+                  <li class="menu2-item speed-item" data-value="1.5">1.5</li>
+                  <li class="menu2-item speed-item" data-value="1.25">1.25</li>
+                  <li class="menu2-item speed-item item-slected-speed item-slected-all" data-value="1">1</li>
+                  <li class="menu2-item speed-item" data-value="0.75">0.75</li>
+                  <li class="menu2-item speed-item" data-value="0.5">0.5</li>
+             </ul>
+            </div>
+        </div>
+
+
+
+        <div class="btnPhoneSkip btnPhoneSkipBackward"><svg class="skip-backward-phone-svg "><use href="#skip-forward-svgreop-com" ></use></svg></div>
+        <div class="btnPhonePlay"><svg class="center-btn-phone-svg "><use href="#play-svgrepo-com" ></use></svg></div>
+        <div class="btnPhoneSkip btnPhoneSkipForward"><svg class="skip-forward-phone-svg "><use href="#skip-forward-svgreop-com" ></use></svg></div>
+        <div class="btnPhoneBackward btnphone-BF">
+            <svg class=" btnphoneBF-svg hidePhoneFBandSpan"><use href="#backward-svgrepo-com"></use></svg>
+            <span class="btnPhoneTimeBackward btnphoneTime hidePhoneFBandSpan">5s</span>
+        </div>
+        <div class="btnPhoneForward btnphone-BF">
+            <span class="btnPhoneTimeForward btnphoneTime hidePhoneFBandSpan">5s</span> 
+            <svg class="btnphoneBF-svg  hidePhoneFBandSpan"><use href="#forward-svgrepo-com"></use></svg>
+        </div>
+
+
+        <div class="btnBF btnBackward">
+            <svg class="bf-effect-svg backward-svg"><use href="#backward-svgrepo-com"></use></svg>
+            5s</div>
+        <div class="btnBF btnForward"> 5s <svg class="bf-effect-svg forward-svg"><use href="#forward-svgrepo-com"></use></svg>
+        </div>
+        <div class="btnCenterEffect">
+            <svg class="btnCenterEffect-svg"><use  href="#play-svgrepo-com" ></use></svg>
+
+        </div> <!-- Effect -->
+        <button class="btnPlayPoster">
+            <svg class="play-poster-svg"><use href="#play-poster-svgrepo-com"></use></svg>
+        </button>
+        <div class="loading"><div class="loading-circle"></div></div>
+        <button class="skipTabligh" disabled><span class="timeTabligh">5</span></button>
+       
+        <div class="screenshot-container">
+            <div class="screenshot-img">
+            </div>
+            <div class="screenshot-btns">
+                <svg class="btn-screenshot-svg download-screenshot-svg"><use href="#download-svgreop-com"></use></svg>
+                <svg class="btn-screenshot-svg close-screenshot-svg"><use href="#close-svgreop-com"></use></svg>
+            </div>
+        </div>
+        <div class="error-container">
+            <svg class="error-svg"><use href="#error-svgrepo-com"></use></svg><span class="error-title"></span>
+        </div>
+        <div id="customSubtitle" class="subtitle"> </div>
+        <div class="vidBarTop">
+            <div class="title-vidbar-top">
+                <p>meysam khalili and my name siv dksjf ?????</p>
+            </div>
+            <div class="btns-vidbar-top">
+                <svg class="btn-video-player btn-screenshot btn-vidbar-top" ><use href="#screenshot-svgrepo-com"></use></svg>
+                <svg class="btn-video-player btn-picture-in-picture btn-vidbar-top"><use href="#picture-in-picture"></use></svg>
+                <div class="div-btn-subtitle btn-vidbar-top">   
+                    <svg class="btn-video-player btn-subtitle"><use href="#subtitle-svgreop-com2"></use></svg>
+                </div>
+                <svg class="btn-video-player btn-setting btn-vidbar-top setting-phone"><use href="#setting-svgrepo-com"></use></svg>
+            </div>
+        </div>
+      </div>
+      <!-- <input type="range" id="customRange"> -->
+       <script src="./js/checkVideoReady.js"></script>
+      <script src="./js/customRange.js"></script>
+      <script src="./js/script.js"></script>
+      <script src="./js/speed.js"></script>
+      <script src="./js/volume.js"></script>
+      <script src="./js/quality.js"></script>
+      <script src="./js/subtitle.js"></script>
+      <script src="./js/settingVideo.js"></script>
+      <script src="./js/screenshot.js"></script>
+      <script src="./js/mobile.js"></script>
+      <!-- <div class="result" style="text-wrap: wrap;"></div> -->
+</body>
+</html>
+<svg>
+    <symbol  viewBox="-3 0 28 28" id="play-svgrepo-com"><g  fill-rule="evenodd" sketchType="MSPage"><g id="Icon-Set-Filled" sketchType="MSLayerGroup" transform="translate(-419.000000, -571.000000)" ><path d="M440.415,583.554 L421.418,571.311 C420.291,570.704 419,570.767 419,572.946 L419,597.054 C419,599.046 420.385,599.36 421.418,598.689 L440.415,586.446 C441.197,585.647 441.197,584.353 440.415,583.554"  sketchType="MSShapeGroup"></path></g></g></symbol>
+    <symbol  viewBox="-1 0 8 8" id="pause-1006-svgrepo-com"><g id="Page-1" stroke="none" stroke-width="1"  fill-rule="evenodd"><g id="Dribbble-Light-Preview" transform="translate(-227.000000, -3765.000000)" ><g  transform="translate(56.000000, 160.000000)"><path d="M172,3605 C171.448,3605 171,3605.448 171,3606 L171,3612 C171,3612.552 171.448,3613 172,3613 C172.552,3613 173,3612.552 173,3612 L173,3606 C173,3605.448 172.552,3605 172,3605 M177,3606 L177,3612 C177,3612.552 176.552,3613 176,3613 C175.448,3613 175,3612.552 175,3612 L175,3606 C175,3605.448 175.448,3605 176,3605 C176.552,3605 177,3605.448 177,3606" id="pause-[#1006]"></path></g></g></g></symbol>
+    <symbol viewBox="0 0 32 32" id="right-next-navigation-svgrepo-com"><g ><path d="M10.05,29.73a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42L20.66,16.71a1,1,0,0,0,0-1.42L9.34,4a1,1,0,0,1,1.42-1.42L22.07,13.88a3,3,0,0,1,0,4.24L10.76,29.44A1,1,0,0,1,10.05,29.73Z"></path></g></symbol>
+    <symbol  viewBox="0 0 32 32" id="left-navigation-back-svgrepo-com"><g ><path d="M22,29.73a1,1,0,0,1-.71-.29L9.93,18.12a3,3,0,0,1,0-4.24L21.24,2.56A1,1,0,1,1,22.66,4L11.34,15.29a1,1,0,0,0,0,1.42L22.66,28a1,1,0,0,1,0,1.42A1,1,0,0,1,22,29.73Z"></path></g></symbol>
+    <symbol  viewBox="0 0 24.00 24.00" id="collapse-svgrepo-com" stroke="#000000" stroke-width="0.00024000000000000003"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0281 9.96432C18.0281 9.55011 17.6923 9.21432 17.2781 9.21432L14.7855 9.21432V6.72168C14.7855 6.30747 14.4497 5.97168 14.0355 5.97168C13.6213 5.97168 13.2855 6.30747 13.2855 6.72168V9.96432C13.2855 10.3785 13.6213 10.7143 14.0355 10.7143L17.2781 10.7143C17.6923 10.7143 18.0281 10.3785 18.0281 9.96432Z" ></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0355 18.028C14.4497 18.028 14.7855 17.6922 14.7855 17.278L14.7855 14.7854L17.2782 14.7854C17.6924 14.7854 18.0282 14.4496 18.0282 14.0354C18.0282 13.6212 17.6924 13.2854 17.2782 13.2854L14.0355 13.2854C13.6213 13.2854 13.2855 13.6212 13.2855 14.0354L13.2855 17.278C13.2855 17.6922 13.6213 18.028 14.0355 18.028Z" ></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96444 18.028C9.55023 18.028 9.21444 17.6922 9.21444 17.278V14.7854H6.7218C6.30759 14.7854 5.9718 14.4496 5.9718 14.0354C5.9718 13.6212 6.30759 13.2854 6.7218 13.2854L9.96444 13.2854C10.3787 13.2854 10.7144 13.6212 10.7144 14.0354L10.7144 17.278C10.7144 17.6922 10.3787 18.028 9.96444 18.028Z" ></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.97183 9.96432C5.97183 9.55011 6.30761 9.21432 6.72183 9.21432H9.21447L9.21447 6.72168C9.21447 6.30747 9.55026 5.97168 9.96447 5.97168C10.3787 5.97168 10.7145 6.30747 10.7145 6.72168L10.7145 9.96432C10.7145 10.3785 10.3787 10.7143 9.96447 10.7143L6.72183 10.7143C6.30761 10.7143 5.97183 10.3785 5.97183 9.96432Z" ></path> </g></symbol>
+    <symbol viewBox="0 0 24 24" id="expand-svgrepo-com"><path d="M4 9V5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.109C4.75992 4 5.03995 4 5.6 4L9 4M4 15V18.4C4 18.9601 4 19.2401 4.10899 19.454C4.20487 19.6422 4.35785 19.7951 4.54601 19.891C4.75992 20 5.03995 20 5.6 20L9 20M15 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V9M20 15V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15"  stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+    <symbol viewBox="0 0 24 24" id="picture-in-picture" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path fill="none" d="M0 0h24v24H0z"></path> <path fill-rule="nonzero" d="M21 3a1 1 0 0 1 1 1v7h-2V5H4v14h6v2H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18zm0 10a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h8zm-1 2h-6v4h6v-4z"></path> </g> </g></symbol>  
+    <symbol  viewBox="0 0 32 32" id="volume-up-megaphone-svgrepo-com" ><path d="M10.029,10l-3.182,-0c-0.764,-0 -1.5,0.322 -2.04,0.907c-0.514,0.556 -0.807,1.307 -0.807,2.093c-0,1.745 -0,4.262 -0,6.008c0,0.787 0.294,1.539 0.809,2.095c0.541,0.585 1.279,0.907 2.044,0.905l3.177,-0.007c-0,0 2.861,3.982 2.861,3.982c0.756,1.053 2.053,1.45 3.218,1.018c1.122,-0.417 1.9,-1.545 1.9,-2.83l-0,-16.345c-0,-1.285 -0.778,-2.413 -1.901,-2.83c-1.165,-0.432 -2.462,-0.034 -3.218,1.019l-2.861,3.985Z"></path><path d="M22.997,12.995l-0,1.999l-1.999,0.004c-0.552,0.002 -0.999,0.451 -0.998,1.003c0.001,0.552 0.45,0.999 1.002,0.997l1.995,-0.004l-0,1.994c-0,0.552 0.448,1 1,1c0.552,0 1,-0.448 1,-1l-0,-1.999l1.999,-0.005c0.552,-0.001 0.999,-0.45 0.997,-1.002c-0.001,-0.552 -0.45,-0.999 -1.002,-0.998l-1.994,0.005l-0,-1.994c-0,-0.552 -0.448,-1 -1,-1c-0.552,-0 -1,0.448 -1,1Z"></path></symbol>   
+    <symbol viewBox="0 0 32 32" id="volume-down-megaphone-svgrepo-com"><path d="M10.016,10l-3.181,-0c-0.765,-0 -1.501,0.322 -2.041,0.907c-0.513,0.556 -0.807,1.307 -0.807,2.093c0,1.745 0,4.262 0,6.008c0,0.787 0.294,1.539 0.809,2.095c0.542,0.585 1.279,0.907 2.045,0.905l3.176,-0.007c0,0 2.861,3.982 2.861,3.982c0.756,1.053 2.053,1.45 3.218,1.018c1.123,-0.417 1.9,-1.545 1.9,-2.83l-0,-16.345c-0,-1.285 -0.777,-2.413 -1.9,-2.83c-1.166,-0.432 -2.462,-0.034 -3.219,1.019l-2.861,3.985Z"></path><path d="M26.978,14.984l-5.993,0.014c-0.552,0.002 -0.999,0.451 -0.998,1.003c0.002,0.552 0.451,0.999 1.003,0.997l5.993,-0.014c0.552,-0.001 0.999,-0.45 0.998,-1.002c-0.002,-0.552 -0.451,-0.999 -1.003,-0.998Z"></path></symbol>   
+    <symbol  viewBox="0 0 24 24" id="speed-alt-svgrepo-com"><path d="M6.34315 17.6569C5.22433 16.538 4.4624 15.1126 4.15372 13.5607C3.84504 12.0089 4.00346 10.4003 4.60896 8.93853C5.21446 7.47672 6.23984 6.22729 7.55544 5.34824C8.87103 4.46919 10.4177 4 12 4C13.5823 4 15.129 4.46919 16.4446 5.34824C17.7602 6.22729 18.7855 7.47672 19.391 8.93853C19.9965 10.4003 20.155 12.0089 19.8463 13.5607C19.5376 15.1126 18.7757 16.538 17.6569 17.6569"  stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12L16 10"  stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+    <symbol viewBox="-1.5 0 19 19" id="multimedia-refresh-replay-video-icon-svgrepo-com" fill="none"><g  stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-1193.000000, -305.000000)" ><g transform="translate(1189.000000, 302.000000)" id="Shape"><path d="M12,7 C15.8659932,7 19,10.1340068 19,14 C19,17.8659932 15.8659932,21 12,21 C8.13400675,21 5,17.8659932 5,14" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10.8260915,10.8857148 L5.69568021,7.30477744 C5.47956961,7.17854145 5.43577155,6.93976099 5.5978545,6.77144635 C5.62566353,6.74256812 5.65860149,6.71691486 5.69568021,6.69525619 L10.8260915,3.11431886 C11.1502574,2.92496489 11.610137,2.97613213 11.8532614,3.2286041 C11.948511,3.32751578 12,3.4478202 12,3.5714598 L12,10.4285738 C12,10.7441638 11.6715145,11 11.2663072,11 C11.1075579,11 10.9530909,10.9598985 10.8260915,10.8857148 Z" fill="white"></path></g></g></g></symbol>
+    <symbol  id="equalizer-filter-filtering-svgrepo-com"  viewBox="0 0 48 48"><path d="M47,12a2,2,0,0,0-2-2H24a2,2,0,0,0,0,4H45A2,2,0,0,0,47,12Z"></path><path d="M3,14H8.35a6,6,0,1,0,0-4H3a2,2,0,0,0,0,4Zm11-4a2,2,0,1,1-2,2A2,2,0,0,1,14,10Z"></path><path d="M45,22H37.65a6,6,0,1,0,0,4H45a2,2,0,0,0,0-4ZM32,26a2,2,0,1,1,2-2A2,2,0,0,1,32,26Z"></path><path d="M22,22H3a2,2,0,0,0,0,4H22a2,2,0,0,0,0-4Z"></path><path d="M45,34H28a2,2,0,0,0,0,4H45a2,2,0,0,0,0-4Z"></path><path d="M18,30a6,6,0,0,0-5.65,4H3a2,2,0,0,0,0,4h9.35A6,6,0,1,0,18,30Zm0,8a2,2,0,1,1,2-2A2,2,0,0,1,18,38Z"></path></symbol>   
+    <symbol viewBox="0 0 24 24"  id="subtitle-svgrepo-com" ><g  ></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" ></g><g id="SVGRepo_iconCarrier" > <path stroke-width="2" stroke="white" d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z" ></path> <path stroke-width="1" stroke="white" d="M10 16H6" stroke-linecap="round"></path> <path stroke-width="1" stroke="white" d="M14 13H18" stroke-linecap="round"></path> <path stroke-width="1" stroke="white" d="M14 16H12.5" stroke-linecap="round"></path> <path stroke-width="1" stroke="white" d="M9.5 13H11.5"  stroke-linecap="round"></path> <path stroke-width="1" stroke="white" d="M18 16H16.5"  stroke-linecap="round"></path> <path stroke-width="1" stroke="white" d="M6 13H7"  stroke-linecap="round"></path> </g></symbol>
+    <symbol viewBox="0 0 24 24"  id="subtitle-svgreop-com2"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12ZM6 15.25C5.58579 15.25 5.25 15.5858 5.25 16C5.25 16.4142 5.58579 16.75 6 16.75H10C10.4142 16.75 10.75 16.4142 10.75 16C10.75 15.5858 10.4142 15.25 10 15.25H6ZM7.75 13C7.75 12.5858 7.41421 12.25 7 12.25H6C5.58579 12.25 5.25 12.5858 5.25 13C5.25 13.4142 5.58579 13.75 6 13.75H7C7.41421 13.75 7.75 13.4142 7.75 13ZM11.5 12.25C11.9142 12.25 12.25 12.5858 12.25 13C12.25 13.4142 11.9142 13.75 11.5 13.75H9.5C9.08579 13.75 8.75 13.4142 8.75 13C8.75 12.5858 9.08579 12.25 9.5 12.25H11.5ZM18.75 13C18.75 12.5858 18.4142 12.25 18 12.25H14C13.5858 12.25 13.25 12.5858 13.25 13C13.25 13.4142 13.5858 13.75 14 13.75H18C18.4142 13.75 18.75 13.4142 18.75 13ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75H14C14.4142 16.75 14.75 16.4142 14.75 16C14.75 15.5858 14.4142 15.25 14 15.25H12.5ZM15.75 16C15.75 15.5858 16.0858 15.25 16.5 15.25H18C18.4142 15.25 18.75 15.5858 18.75 16C18.75 16.4142 18.4142 16.75 18 16.75H16.5C16.0858 16.75 15.75 16.4142 15.75 16Z" ></path> </g></symbol>
+   <symbol  viewBox="0 0 512 512" id="volume-up-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-g</title><path d="M296,416.19a23.92,23.92,0,0,1-14.21-4.69l-.66-.51-91.46-75H120a24,24,0,0,1-24-24V200a24,24,0,0,1,24-24h69.65l91.46-75,.66-.51A24,24,0,0,1,320,119.83V392.17a24,24,0,0,1-24,24Z"></path><path d="M384,336a16,16,0,0,1-14.29-23.18c9.49-18.9,14.3-38,14.3-56.82,0-19.36-4.66-37.92-14.25-56.73a16,16,0,0,1,28.5-14.54C410.2,208.16,416,231.47,416,256c0,23.83-6,47.78-17.7,71.18A16,16,0,0,1,384,336Z"></path></g></symbol>
+   <symbol  viewBox="0 0 512 512" id="volume-middle-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-g</title><path d="M264,416.19a23.92,23.92,0,0,1-14.21-4.69l-.66-.51-91.46-75H88a24,24,0,0,1-24-24V200a24,24,0,0,1,24-24h69.65l91.46-75,.66-.51A24,24,0,0,1,288,119.83V392.17a24,24,0,0,1-24,24Z"></path><path d="M352,336a16,16,0,0,1-14.29-23.18c9.49-18.9,14.3-38,14.3-56.82,0-19.36-4.66-37.92-14.25-56.73a16,16,0,0,1,28.5-14.54C378.2,208.16,384,231.47,384,256c0,23.83-6,47.78-17.7,71.18A16,16,0,0,1,352,336Z"></path><path d="M400,384a16,16,0,0,1-13.87-24C405,327.05,416,299.45,416,256c0-44.12-10.94-71.52-29.83-103.95A16,16,0,0,1,413.83,136C434.92,172.16,448,204.88,448,256c0,50.36-13.06,83.24-34.12,120A16,16,0,0,1,400,384Z"></path></g></symbol>
+   <symbol  viewBox="0 0 512 512" id="volume-down-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-g</title><path d="M232,416a23.88,23.88,0,0,1-14.2-4.68,8.27,8.27,0,0,1-.66-.51L125.76,336H56a24,24,0,0,1-24-24V200a24,24,0,0,1,24-24h69.75l91.37-74.81a8.27,8.27,0,0,1,.66-.51A24,24,0,0,1,256,120V392a24,24,0,0,1-24,24ZM125.82,336Zm-.27-159.86Z"></path><path d="M320,336a16,16,0,0,1-14.29-23.19c9.49-18.87,14.3-38,14.3-56.81,0-19.38-4.66-37.94-14.25-56.73a16,16,0,0,1,28.5-14.54C346.19,208.12,352,231.44,352,256c0,23.86-6,47.81-17.7,71.19A16,16,0,0,1,320,336Z"></path><path d="M368,384a16,16,0,0,1-13.86-24C373.05,327.09,384,299.51,384,256c0-44.17-10.93-71.56-29.82-103.94a16,16,0,0,1,27.64-16.12C402.92,172.11,416,204.81,416,256c0,50.43-13.06,83.29-34.13,120A16,16,0,0,1,368,384Z"></path><path d="M416,432a16,16,0,0,1-13.39-24.74C429.85,365.47,448,323.76,448,256c0-66.5-18.18-108.62-45.49-151.39a16,16,0,1,1,27-17.22C459.81,134.89,480,181.74,480,256c0,64.75-14.66,113.63-50.6,168.74A16,16,0,0,1,416,432Z"></path></g></symbol>
+   <symbol viewBox="0 0 512 512" id="volume-mute-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-g</title><line x1="416" y1="432" x2="64" y2="80" style="fill:none;stroke:white;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line><path d="M243.33,98.86a23.89,23.89,0,0,0-25.55,1.82l-.66.51L188.6,124.54a8,8,0,0,0-.59,11.85l54.33,54.33A8,8,0,0,0,256,185.06V120.57A24.51,24.51,0,0,0,243.33,98.86Z"></path><path d="M251.33,335.29,96.69,180.69A16,16,0,0,0,85.38,176H56a24,24,0,0,0-24,24V312a24,24,0,0,0,24,24h69.76l92,75.31A23.9,23.9,0,0,0,243.63,413,24.51,24.51,0,0,0,256,391.45V346.59A16,16,0,0,0,251.33,335.29Z"></path><path d="M352,256c0-24.56-5.81-47.87-17.75-71.27a16,16,0,1,0-28.5,14.55C315.34,218.06,320,236.62,320,256q0,4-.31,8.13a8,8,0,0,0,2.32,6.25l14.36,14.36a8,8,0,0,0,13.55-4.31A146,146,0,0,0,352,256Z"></path><path d="M416,256c0-51.18-13.08-83.89-34.18-120.06a16,16,0,0,0-27.64,16.12C373.07,184.44,384,211.83,384,256c0,23.83-3.29,42.88-9.37,60.65a8,8,0,0,0,1.9,8.26L389,337.4a8,8,0,0,0,13.13-2.79C411,311.76,416,287.26,416,256Z"></path><path d="M480,256c0-74.25-20.19-121.11-50.51-168.61a16,16,0,1,0-27,17.22C429.82,147.38,448,189.5,448,256c0,46.19-8.43,80.27-22.43,110.53a8,8,0,0,0,1.59,9l11.92,11.92A8,8,0,0,0,452,385.29C471.6,344.9,480,305,480,256Z"></path></g></symbol>
+   <!-- <symbol  viewBox="0 0 512 512" id="volume-mute-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>ionicons-v5-g</title><path d="M344,416a23.92,23.92,0,0,1-14.21-4.69c-.23-.16-.44-.33-.66-.51l-91.46-74.9H168a24,24,0,0,1-24-24V200.07a24,24,0,0,1,24-24h69.65l91.46-74.9c.22-.18.43-.35.66-.51A24,24,0,0,1,368,120V392a24,24,0,0,1-24,24Z"></path></g></symbol> -->
+   <!-- <symbol  viewBox="-128 0 512 512" id="volume-mute-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M215 71l-89 89H24a24 24 0 0 0-24 24v144a24 24 0 0 0 24 24h102.06L215 441c15 15 41 4.47 41-17V88c0-21.47-26-32-41-17z"></path></g></symbol> -->
+   <!-- <symbol  viewBox="0 0 24 24" id="volume-mute-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="primary" d="M16.41,2.19a1,1,0,0,1,1-.08A1,1,0,0,1,18,3v9.93L9.89,7ZM4,9v6a2,2,0,0,0,2,2H9.84l6.57,4.81a1,1,0,0,0,1,.08A1,1,0,0,0,18,21V14.19L8.25,7H6a2,2,0,0,0-.85.19A2,2,0,0,0,4,9Z" style="fill: #ffffff;"></path><path id="secondary" d="M2.41,5.17l2.74,2L18,16.65l2.41,1.78a.94.94,0,0,0,.59.2,1,1,0,0,0,.59-1.8L18,14.19,8.25,7,3.59,3.57a1,1,0,0,0-1.18,1.6Z" style="fill: #ffffff;"></path></g></symbol> -->
+   <symbol viewBox="0 0 24 24"  id="setting-svgrepo-com" ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9838 2.54161C14.0711 2.71093 14.0928 2.92777 14.1361 3.36144C14.2182 4.1823 14.2593 4.59274 14.4311 4.81793C14.649 5.10358 15.0034 5.25038 15.3595 5.20248C15.6402 5.16472 15.9594 4.90352 16.5979 4.38113C16.9352 4.10515 17.1038 3.96716 17.2853 3.90918C17.5158 3.83555 17.7652 3.84798 17.9872 3.94419C18.162 4.01994 18.3161 4.17402 18.6243 4.4822L19.5178 5.37567C19.8259 5.68385 19.98 5.83794 20.0558 6.01275C20.152 6.23478 20.1644 6.48415 20.0908 6.71464C20.0328 6.89612 19.8948 7.06478 19.6188 7.4021C19.0964 8.0406 18.8352 8.35984 18.7975 8.64056C18.7496 8.99662 18.8964 9.35102 19.182 9.56893C19.4072 9.74072 19.8176 9.78176 20.6385 9.86385C21.0722 9.90722 21.2891 9.92891 21.4584 10.0162C21.6734 10.1272 21.841 10.3123 21.9299 10.5373C22 10.7145 22 10.9324 22 11.3682V12.6319C22 13.0676 22 13.2855 21.93 13.4626C21.841 13.6877 21.6734 13.8729 21.4583 13.9838C21.289 14.0711 21.0722 14.0928 20.6386 14.1361L20.6386 14.1361C19.818 14.2182 19.4077 14.2592 19.1825 14.4309C18.8967 14.6489 18.7499 15.0034 18.7979 15.3596C18.8357 15.6402 19.0968 15.9593 19.619 16.5976C19.8949 16.9348 20.0328 17.1034 20.0908 17.2848C20.1645 17.5154 20.152 17.7648 20.0558 17.9869C19.98 18.1617 19.826 18.3157 19.5179 18.6238L18.6243 19.5174C18.3162 19.8255 18.1621 19.9796 17.9873 20.0554C17.7652 20.1516 17.5159 20.164 17.2854 20.0904C17.1039 20.0324 16.9352 19.8944 16.5979 19.6184L16.5979 19.6184C15.9594 19.096 15.6402 18.8348 15.3595 18.7971C15.0034 18.7492 14.649 18.896 14.4311 19.1816C14.2593 19.4068 14.2183 19.8173 14.1362 20.6383C14.0928 21.0722 14.0711 21.2891 13.9837 21.4585C13.8728 21.6735 13.6877 21.8409 13.4628 21.9299C13.2856 22 13.0676 22 12.6316 22H11.3682C10.9324 22 10.7145 22 10.5373 21.9299C10.3123 21.841 10.1272 21.6734 10.0162 21.4584C9.92891 21.2891 9.90722 21.0722 9.86385 20.6385C9.78176 19.8176 9.74072 19.4072 9.56892 19.182C9.35101 18.8964 8.99663 18.7496 8.64057 18.7975C8.35985 18.8352 8.04059 19.0964 7.40208 19.6189L7.40206 19.6189C7.06473 19.8949 6.89607 20.0329 6.71458 20.0908C6.4841 20.1645 6.23474 20.152 6.01272 20.0558C5.8379 19.9801 5.6838 19.826 5.37561 19.5178L4.48217 18.6243C4.17398 18.3162 4.01988 18.1621 3.94414 17.9873C3.84794 17.7652 3.8355 17.5159 3.90913 17.2854C3.96711 17.1039 4.10511 16.9352 4.3811 16.5979C4.90351 15.9594 5.16471 15.6402 5.20247 15.3594C5.25037 15.0034 5.10357 14.649 4.81792 14.4311C4.59273 14.2593 4.1823 14.2182 3.36143 14.1361C2.92776 14.0928 2.71093 14.0711 2.54161 13.9838C2.32656 13.8728 2.15902 13.6877 2.07005 13.4627C2 13.2855 2 13.0676 2 12.6318V11.3683C2 10.9324 2 10.7144 2.07008 10.5372C2.15905 10.3123 2.32654 10.1272 2.54152 10.0163C2.71088 9.92891 2.92777 9.90722 3.36155 9.86384H3.36155H3.36156C4.18264 9.78173 4.59319 9.74068 4.81842 9.56881C5.10395 9.35092 5.2507 8.99664 5.20287 8.64066C5.16514 8.35987 4.90385 8.04052 4.38128 7.40182C4.10516 7.06435 3.96711 6.89561 3.90914 6.71405C3.83557 6.48364 3.848 6.23438 3.94413 6.01243C4.01988 5.83754 4.17403 5.68339 4.48233 5.37509L5.37565 4.48177L5.37566 4.48177C5.68385 4.17357 5.83795 4.01947 6.01277 3.94373C6.23478 3.84753 6.48414 3.8351 6.71463 3.90872C6.89612 3.9667 7.06481 4.10472 7.4022 4.38076C8.04061 4.9031 8.35982 5.16427 8.64044 5.20207C8.99661 5.25003 9.35113 5.10319 9.56907 4.81742C9.74077 4.59227 9.78181 4.18195 9.86387 3.36131C9.90722 2.92776 9.9289 2.71098 10.0162 2.5417C10.1271 2.32658 10.3123 2.15898 10.5374 2.07001C10.7145 2 10.9324 2 11.3681 2H12.6318C13.0676 2 13.2855 2 13.4627 2.07005C13.6877 2.15902 13.8728 2.32656 13.9838 2.54161ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#ffffff"></path> </g></symbol>
+    <symbol viewBox="0 0 24 24" fill="none" id="cinema-mode-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect x="3" y="5" width="18" height="14" rx="2"  stroke-linecap="round" stroke-linejoin="round"></rect> </g></symbol>
+    <symbol viewBox="0 0 48 48" fill="none" id="normal-mode-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M36 14H12C10.8954 14 10 14.8954 10 16V32C10 33.1046 10.8954 34 12 34H36C37.1046 34 38 33.1046 38 32V16C38 14.8954 37.1046 14 36 14Z" ></path> </g></symbol>
+    <symbol viewBox="0 0 56 56" id="skip-forward-svgreop-com"><path d="M 9.4844 46.3867 C 10.4453 46.3867 11.2422 46.0820 12.1797 45.5195 L 36.0625 31.4805 C 37.3516 30.7071 38.0547 29.8633 38.3125 28.8789 L 38.3125 43.9492 C 38.3125 46.0117 39.3906 47.0898 41.4532 47.0898 L 46.7735 47.0898 C 48.8360 47.0898 49.8906 46.0117 49.8906 43.9492 L 49.8906 12.0273 C 49.8906 9.8945 48.8360 8.9102 46.7735 8.9102 L 41.4532 8.9102 C 39.3906 8.9102 38.3125 9.9883 38.3125 12.0273 L 38.3125 27.0742 C 38.0547 26.1133 37.3516 25.2461 36.0625 24.4961 L 12.1797 10.4336 C 11.2188 9.8711 10.4453 9.5664 9.4844 9.5664 C 7.6563 9.5664 6.1094 10.9727 6.1094 13.5976 L 6.1094 42.3789 C 6.1094 45.0039 7.6563 46.3867 9.4844 46.3867 Z"/></symbol>
+    <symbol  viewBox="0 0 24 24" id="screenshot-svgrepo-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" d="M3,21 C1.8954305,21 1,20.1045695 1,19 L1,5 C1,3.8954305 1.8954305,3 3,3 L21,3 C22.1045695,3 23,3.8954305 23,5 L23,19 C23,20.1045695 22.1045695,21 21,21 L3,21 Z M21,5 L3,5 L3,19 L21,19 L21,5 Z M9.1843164,7.78768371 C9.67333621,7.30584332 10.2804658,7 11,7 L13,7 C13.7195342,7 14.3266638,7.30584332 14.8156836,7.78768371 C14.8879867,7.85892532 14.9541108,7.93005667 15.0143026,8 L15.6,8 C16.9414906,8 18,9.13411721 18,10.5 L18,14.5 C18,15.8658828 16.9414906,17 15.6,17 L8.4,17 C7.05850939,17 6,15.8658828 6,14.5 L6,10.5 C6,9.13411721 7.05850939,8 8.4,8 L8.98569742,8 C9.0458892,7.93005667 9.11201328,7.85892532 9.1843164,7.78768371 Z M11,9 C10.8706092,9 10.7333263,9.06915668 10.5880336,9.21231629 C10.4804087,9.31836108 10.405992,9.42597745 10.383646,9.46815566 L10.1018749,10 L8.4,10 C8.19509331,10 8,10.2090285 8,10.5 L8,14.5 C8,14.7909715 8.19509331,15 8.4,15 L15.6,15 C15.8049067,15 16,14.7909715 16,14.5 L16,10.5 C16,10.2090285 15.8049067,10 15.6,10 L13.8981251,10 L13.616354,9.46815566 C13.594008,9.42597745 13.5195913,9.31836108 13.4119664,9.21231629 C13.2666737,9.06915668 13.1293908,9 13,9 L11,9 Z M12,14 C10.8954305,14 10,13.1045695 10,12 C10,10.8954305 10.8954305,10 12,10 C13.1045695,10 14,10.8954305 14,12 C14,13.1045695 13.1045695,14 12,14 Z"></path> </g></symbol>
+    <symbol viewBox="0 0 24 24" id="download-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C12.5523 3 13 3.44772 13 4V12.5858L15.2929 10.2929C15.6834 9.90237 16.3166 9.90237 16.7071 10.2929C17.0976 10.6834 17.0976 11.3166 16.7071 11.7071L12.7071 15.7071C12.5196 15.8946 12.2652 16 12 16C11.7348 16 11.4804 15.8946 11.2929 15.7071L7.2929 11.7071C6.90238 11.3166 6.90238 10.6834 7.2929 10.2929C7.68342 9.90237 8.31659 9.90237 8.70711 10.2929L11 12.5858V4C11 3.44772 11.4477 3 12 3ZM4.00001 14C4.55229 14 5.00001 14.4477 5.00001 15C5.00001 15.9772 5.00485 16.3198 5.05765 16.5853C5.29437 17.7753 6.22466 18.7056 7.41474 18.9424C7.68018 18.9952 8.02276 19 9.00001 19H15C15.9772 19 16.3198 18.9952 16.5853 18.9424C17.7753 18.7056 18.7056 17.7753 18.9424 16.5853C18.9952 16.3198 19 15.9772 19 15C19 14.4477 19.4477 14 20 14C20.5523 14 21 14.4477 21 15C21 15.0392 21 15.0777 21 15.1157C21.0002 15.9334 21.0004 16.4906 20.9039 16.9755C20.5094 18.9589 18.9589 20.5094 16.9755 20.9039C16.4907 21.0004 15.9334 21.0002 15.1158 21C15.0778 21 15.0392 21 15 21H9.00001C8.96084 21 8.92225 21 8.88423 21C8.06664 21.0002 7.50935 21.0004 7.02456 20.9039C5.0411 20.5094 3.49061 18.9589 3.09608 16.9755C2.99965 16.4906 2.99978 15.9334 2.99999 15.1158C3 15.0777 3.00001 15.0392 3.00001 15C3.00001 14.4477 3.44772 14 4.00001 14Z" fill="#ffffff"></path> </g></symbol>
+    <symbol viewBox="0 0 1024 1024" id="close-svgreop-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#ffffff" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z"></path></g></symbol>
+    <!-- <symbol  viewBox="0 0 56 56"><path d="M 25.1218 44.5009 C 26.7084 44.5009 28.0509 43.2804 28.0509 41.0225 L 28.0509 29.3058 C 28.2747 30.1601 28.9053 30.8924 30.0037 31.5434 L 50.7318 43.7483 C 51.5454 44.2365 52.2369 44.5009 53.0709 44.5009 C 54.6577 44.5009 56 43.2804 56 41.0225 L 56 16.0228 C 56 13.7649 54.6577 12.5444 53.0709 12.5444 C 52.2369 12.5444 51.5658 12.8088 50.7318 13.2970 L 30.0037 25.5020 C 28.8849 26.1529 28.2747 26.8852 28.0509 27.7395 L 28.0509 16.0228 C 28.0509 13.7649 26.7084 12.5444 25.1218 12.5444 C 24.2877 12.5444 23.6165 12.8088 22.7825 13.2970 L 2.0545 25.5020 C .6102 26.3563 0 27.3530 0 28.5125 C 0 29.6923 .6102 30.6890 2.0545 31.5434 L 22.7825 43.7483 C 23.5962 44.2365 24.2877 44.5009 25.1218 44.5009 Z M 24.2267 40.7377 C 24.0843 40.7377 23.9216 40.6970 23.7386 40.5750 L 4.3938 29.1024 C 4.1090 28.9396 3.9463 28.7973 3.9463 28.5125 C 3.9463 28.2481 4.1090 28.1057 4.3938 27.9429 L 23.7386 16.4703 C 23.9419 16.3686 24.0843 16.3076 24.2267 16.3076 C 24.5318 16.3076 24.7760 16.4907 24.7760 16.9178 L 24.7760 40.1275 C 24.7760 40.5546 24.5318 40.7377 24.2267 40.7377 Z M 52.1761 40.7377 C 52.0540 40.7377 51.8911 40.6970 51.6878 40.5750 L 32.3430 29.1024 C 32.0582 28.9396 31.9158 28.7973 31.9158 28.5125 C 31.9158 28.2481 32.0582 28.1057 32.3430 27.9429 L 51.6878 16.4703 C 51.8911 16.3686 52.0540 16.3076 52.1761 16.3076 C 52.4810 16.3076 52.7252 16.4907 52.7252 16.9178 L 52.7252 40.1275 C 52.7252 40.5546 52.4810 40.7377 52.1761 40.7377 Z"/></symbol> -->
+    <!-- <symbol  viewBox="0 0 56 56" ><path d="M 2.9281 44.4947 C 3.7618 44.4947 4.4531 44.2304 5.2665 43.7424 L 25.9869 31.5420 C 27.1053 30.8913 27.7153 30.1592 27.9389 29.3052 L 27.9389 41.0176 C 27.9389 43.2747 29.2810 44.4947 30.8671 44.4947 C 31.7007 44.4947 32.3921 44.2304 33.2055 43.7424 L 53.9461 31.5420 C 55.3695 30.6879 56 29.6916 56 28.5122 C 56 27.3531 55.3695 26.3568 53.9461 25.5028 L 33.2055 13.3023 C 32.3921 12.8143 31.7007 12.5500 30.8671 12.5500 C 29.2810 12.5500 27.9389 13.7700 27.9389 16.0271 L 27.9389 27.7395 C 27.7153 26.8855 27.1053 26.1535 25.9869 25.5028 L 5.2665 13.3023 C 4.4328 12.8143 3.7618 12.5500 2.9281 12.5500 C 1.3420 12.5500 0 13.7700 0 16.0271 L 0 41.0176 C 0 43.2747 1.3420 44.4947 2.9281 44.4947 Z M 3.8228 40.7329 C 3.5178 40.7329 3.2738 40.5499 3.2738 40.1229 L 3.2738 16.9218 C 3.2738 16.4948 3.5178 16.3117 3.8228 16.3117 C 3.9651 16.3117 4.1075 16.3728 4.3108 16.4745 L 23.6485 27.9428 C 23.9332 28.1055 24.0958 28.2479 24.0958 28.5122 C 24.0958 28.7969 23.9332 28.9392 23.6485 29.1019 L 4.3108 40.5703 C 4.1278 40.6923 3.9651 40.7329 3.8228 40.7329 Z M 31.7618 40.7329 C 31.4568 40.7329 31.2127 40.5499 31.2127 40.1229 L 31.2127 16.9218 C 31.2127 16.4948 31.4568 16.3117 31.7618 16.3117 C 31.9041 16.3117 32.0464 16.3728 32.2498 16.4745 L 51.5874 27.9428 C 51.8722 28.1055 52.0346 28.2479 52.0346 28.5122 C 52.0346 28.7969 51.8722 28.9392 51.5874 29.1019 L 32.2498 40.5703 C 32.0668 40.6923 31.9041 40.7329 31.7618 40.7329 Z"/></symbol> -->
+    <symbol  viewBox="0 0 32 32"  id="backward-svgrepo-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>backward</title> <path d="M0 16q0 1.12 0.896 1.664l12 8q0.448 0.32 0.992 0.352t1.056-0.224q0.48-0.288 0.768-0.768t0.288-1.024v-16q0-0.544-0.288-1.024t-0.768-0.736-1.056-0.224-0.992 0.32l-12 8q-0.896 0.608-0.896 1.664zM16 16q0 1.12 0.896 1.664l12 8q0.448 0.32 0.992 0.352t1.056-0.224q0.48-0.288 0.768-0.768t0.288-1.024v-16q0-0.544-0.288-1.024t-0.768-0.736-1.056-0.224-0.992 0.32l-12 8q-0.896 0.608-0.896 1.664z"></path> </g></symbol>
+    <symbol viewBox="0 0 32 32" id="forward-svgrepo-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>forward</title> <path d="M0 24q0 0.544 0.288 1.056t0.768 0.736q0.48 0.256 1.056 0.224t0.992-0.32l12-8q0.896-0.608 0.896-1.696t-0.896-1.632l-12-8q-0.448-0.32-0.992-0.352t-1.056 0.224q-0.48 0.256-0.768 0.736t-0.288 1.024v16zM16 24q0 0.544 0.288 1.056t0.768 0.736q0.48 0.256 1.056 0.224t0.992-0.32l12-8q0.896-0.608 0.896-1.696t-0.896-1.632l-12-8q-0.448-0.32-0.992-0.352t-1.056 0.224q-0.48 0.256-0.768 0.736t-0.288 1.024v16z"></path> </g></symbol>
+    <!-- <symbol  viewBox="0 0 56 56" ><g id="SVGRepo_bgCarrier" ></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M 27.9999 51.9063 C 41.0546 51.9063 51.9063 41.0781 51.9063 28 C 51.9063 14.9453 41.0312 4.0937 27.9765 4.0937 C 14.8983 4.0937 4.0937 14.9453 4.0937 28 C 4.0937 41.0781 14.9218 51.9063 27.9999 51.9063 Z M 23.7109 37.0469 C 22.6327 37.7031 21.4140 37.1875 21.4140 36.0625 L 21.4140 19.9375 C 21.4140 18.8594 22.7030 18.3906 23.7109 18.9766 L 36.8827 26.7812 C 37.8436 27.3437 37.8671 28.6797 36.8827 29.2656 Z"></path></g></symbol> -->
+    <symbol  viewBox="-5.6 -5.6 67.20 67.20" id="play-poster-svgrepo-com"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(11.48,11.48), scale(0.59)"><rect x="-5.6" y="-5.6" width="67.20" height="67.20" rx="33.6" fill="#ffffff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.33599999999999997"></g><g id="SVGRepo_iconCarrier"><path d="M 27.9999 51.9063 C 41.0546 51.9063 51.9063 41.0781 51.9063 28 C 51.9063 14.9453 41.0312 4.0937 27.9765 4.0937 C 14.8983 4.0937 4.0937 14.9453 4.0937 28 C 4.0937 41.0781 14.9218 51.9063 27.9999 51.9063 Z M 23.7109 37.0469 C 22.6327 37.7031 21.4140 37.1875 21.4140 36.0625 L 21.4140 19.9375 C 21.4140 18.8594 22.7030 18.3906 23.7109 18.9766 L 36.8827 26.7812 C 37.8436 27.3437 37.8671 28.6797 36.8827 29.2656 Z"></path></g></symbol>
+    <symbol viewBox="0 0 24 24" fill="none" id="error-svgrepo-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm-1.5-5.009c0-.867.659-1.491 1.491-1.491.85 0 1.509.624 1.509 1.491 0 .867-.659 1.509-1.509 1.509-.832 0-1.491-.642-1.491-1.509zM11.172 6a.5.5 0 0 0-.499.522l.306 7a.5.5 0 0 0 .5.478h1.043a.5.5 0 0 0 .5-.478l.305-7a.5.5 0 0 0-.5-.522h-1.655z" fill="#ffffff"></path></g></symbol>
+    <!-- <symbol fill="#ffffff"  viewBox="0 0 512 512" stroke="#ffffff" id="error-svgrepo-com"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M64,256c0-106.1,86-192,192-192 c42.1,0,81,13.7,112.6,36.7L100.7,368.6C77.7,337,64,298.1,64,256z M256,448c-42.1,0-81-13.7-112.6-36.7l267.9-267.9 c23,31.7,36.7,70.5,36.7,112.6C448,362.1,362,448,256,448z"></path> </g></symbol> -->
+    <!-- <symbol fill="#ffffff" viewBox="0 0 24 24" id="error-svgrepo-com" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12.884 2.532c-.346-.654-1.422-.654-1.768 0l-9 17A.999.999 0 0 0 3 21h18a.998.998 0 0 0 .883-1.467L12.884 2.532zM13 18h-2v-2h2v2zm-2-4V9h2l.001 5H11z"></path></g></symbol> -->
+</svg>
+
+
+
+
+
+
+
+
+
+
+
