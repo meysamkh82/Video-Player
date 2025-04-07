@@ -1,5 +1,6 @@
-/img
+
 /src/**
 !src/subtitle
-
+!/src/subtitle/ff.vtt
+!/src/subtitle/subtitles.vtt
 /points.js
