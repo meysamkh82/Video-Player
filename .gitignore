@@ -1,5 +1,5 @@
 /img
-/src
-/fonts
-/sound
+/src/**
+!src/subtitle
+
 /points.js
