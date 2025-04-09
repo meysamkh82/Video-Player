@@ -591,6 +591,9 @@ align-items: center;
 .hidePhoneFBandSpan{
     display: none;
 }
+.noneVidBar{
+    display: none !important;
+}
 .error-container{
     position: absolute;
     background-color: rgba(52, 52, 52, 0.921);

@@ -422,31 +422,23 @@ function FullScreenToggle(){
 }
 
 function PosterPlayToggle(){
-  // timeSkipTabligh.innerHTML = timeSkip+'s';
   vidBar.style.zIndex = 100 ;
   showVidbarAndBtns();
-  // if(hasTablighat)
-  //   btnSkipTabligh.style.display='flex';
   if(!isMobile())
     video.addEventListener('click',clickPlayToggle);
   PlayToggle()
   hasPlayedoneMore=true;
 }
 function clickPlayToggle(){
-  // if(isTablighat)
-  //   return
   if(settingActive)
     return
   PlayToggle()
 }
-// btnSkipTabligh.addEventListener('click',()=>{
-//   console.log('btntablighskip')
-//   if(!isSkip)
-//     return
-//   skipTablighFunc();
-// })
 function PlayToggle(){ 
-
+  let panelQuality = document.querySelector(".panel-quality")
+  panelQuality.firstElementChild.childNodes.forEach(elem =>{
+    console.log(elem)
+  })
   if(playBtn.classList.contains('replay-svg')){
     playBtn.classList.remove('replay-svg');
     played = false;
