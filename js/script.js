@@ -435,10 +435,6 @@ function clickPlayToggle(){
   PlayToggle()
 }
 function PlayToggle(){ 
-  let panelQuality = document.querySelector(".panel-quality")
-  panelQuality.firstElementChild.childNodes.forEach(elem =>{
-    console.log(elem)
-  })
   if(playBtn.classList.contains('replay-svg')){
     playBtn.classList.remove('replay-svg');
     played = false;

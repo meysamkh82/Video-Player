@@ -8,7 +8,6 @@ checkFetchUrlSource().then(()=>{
   }
   document.querySelector('.item-back-quality').addEventListener('click',()=>{
     hideMenuClickItem()
-    console.log('hidemenuclickitem itembackqauality')
   })
 })
 
@@ -17,11 +16,7 @@ async function checkFetchUrlSource() {
     const source = sourcesVideo[i];
     try {
       const response = await fetch(source.src, { method: "HEAD" });
-
-      if (response.ok) {
-        console.log(source.src, true);
-        console.log(source.dataset.label + " " + source.dataset.default);
-      } else {
+      if (!response.ok) {
         throw new Error("Source not reachable");
       }
     } catch (err) {
@@ -92,9 +87,6 @@ function setupQualityMenu() {
     },3000)
     return false;
   }
-  panelQuality.firstElementChild.childNodes.forEach(elem =>{
-    console.log(elem)
-  })
   return true;
 }
 function setupQualitySelector() {

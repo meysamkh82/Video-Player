@@ -1,11 +1,10 @@
 
 .setting-menu{
-    z-index: 0; /*2,0*/
+    z-index: 0; 
     opacity: 0;
-    /* height: 400px; */
-    max-height: 300px !important;
-    transition:all .3s;
+    max-height: 280px !important;
     max-width: 250px ;
+    transition:all .3s;
     width: 30%;
     min-width: 200px;
     background: rgba(0, 0, 0, 0.8);
@@ -18,7 +17,6 @@
     border-radius: 6px;
     overflow-x:hidden ;
     overflow-y:auto;
-    /* display: none; */
     scrollbar-color: #505050 rgb(30, 30, 30)!important;
     scrollbar-width: thin;
     backdrop-filter: blur(10px); 
@@ -114,7 +112,7 @@
 }
 .show-menu{
     opacity: 1;
-    z-index: 34484849489498;
+    z-index: 390;
 }
 .selected-item{
     font-size:.8rem;

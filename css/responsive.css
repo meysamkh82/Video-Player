@@ -3,11 +3,19 @@
  .subtitle{
     font-size:1.5rem;
  }
+ 
+.setting-menu{
+    max-height: 400px !important;
+    max-width: 320px ;
+    width: 30%;
+    
+}
 }
 @media screen and (min-width:1280px) and (max-width:1919px){
-    .vidFrame:fullscreen .subtitle{
-        font-size: 1.5rem;
-      }
+     
+.vidFrame:fullscreen .subtitle{
+    font-size: 1.5rem;
+}
   .subtitle{
     font-size:1.2rem;
   }
