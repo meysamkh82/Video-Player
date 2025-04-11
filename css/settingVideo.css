@@ -2,7 +2,7 @@
 .setting-menu{
     z-index: 0; 
     opacity: 0;
-    max-height: 280px !important;
+    max-height: 300px !important;
     max-width: 250px ;
     transition:all .3s;
     width: 30%;

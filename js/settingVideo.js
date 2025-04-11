@@ -116,7 +116,7 @@ function setOverflowMenuWrapper(panel){
     if(isMobilePortrait)
         panel.getBoundingClientRect().height >= 200 ? menuWrapper.style.overflowY = 'scroll':  menuWrapper.style.overflowY = 'hidden';
     else
-        panel.getBoundingClientRect().height >= 280 ? panel.getBoundingClientRect().height >= 314 ? menuWrapper.style.overflowY = 'scroll' : menuWrapper.style.overflowY = 'hidden':  menuWrapper.style.overflowY = 'hidden';
+        panel.getBoundingClientRect().height >= 300 ? panel.getBoundingClientRect().height >= 310 ? menuWrapper.style.overflowY = 'scroll' : menuWrapper.style.overflowY = 'hidden':  menuWrapper.style.overflowY = 'hidden';
     //har item taghrib 34 px inga to shart dovom gotam age az 280 bishtar bod bor bebin az 314 px bozorgrae bad scroll emal kon baray inke alaki scroll faal nashe
 }
 function closeSelectSetting(element){
