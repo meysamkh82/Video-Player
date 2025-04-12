@@ -9,24 +9,6 @@ function checkVideoReady(videoElement,source, onSuccess, onFail, timeoutMs = 500
       cleanup();
       onSuccess();
     };
-  //   async function checkUrlDefaultSource(){
-  //     const sourcesVideo = videoElement.querySelectorAll('source');
-  //   let response = await fetch(source.src, { method: 'HEAD' });
-  //   if(response.ok){
-  //     successHandler()
-
-  //   }else{
-  //     sourcesVideo.forEach(child=>{
-  //       console.log(child)
-  //       video.removeChild(child)
-  //     })
-  //     if (isReady) return;
-  //     isReady = true;
-  //     cleanup();
-  //   onFail(' video source not reachable (404 or network error).');
-  //   console.log('fetch false')
-  //   }
-  // } 
     const errorHandler = () => {
       if (isReady) return;
       isReady = true;
