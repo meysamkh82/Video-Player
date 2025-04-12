@@ -343,6 +343,9 @@ align-items: center;
         cursor: pointer;
         /* transition: all .4s; */
     }
+    .btn-video-player:hover:not(.btn-setting){
+        animation: anibtns .2s ease-in;
+    }
     .btn-screenshot{
         fill: white;
         /* stroke: white; */
@@ -617,4 +620,12 @@ align-items: center;
 .error-svg{
     width: 1.7rem;
     height: 1.7rem;
+}
+@keyframes anibtns {
+    from{
+        transform: scale(1.1);
+    }to{
+        transform: scale(1);
+
+    }
 }
