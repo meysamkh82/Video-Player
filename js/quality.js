@@ -10,8 +10,11 @@ checkFetchUrlSource().then(()=>{
     hideMenuClickItem()
   })
 })
-
 async function checkFetchUrlSource() {
+  if (location.protocol === 'file:') {
+    console.warn("در حالت file:// هستیم، fetch غیرفعاله.");
+    return;
+  }
   for (let i = 0; i < sourcesVideo.length; i++) {
     const source = sourcesVideo[i];
     try {
