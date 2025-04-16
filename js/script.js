@@ -155,6 +155,15 @@ btnPlayPoster.addEventListener('click',PosterPlayToggle);
 volumeBtn.addEventListener('click',MuteToggle); 
 video.addEventListener('ended',finishVideo);
 fullscreenBtn.addEventListener('click',FullScreenToggle);
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) {
+    fullScreen=false;
+      fullscreenBtn.firstElementChild.setAttribute('href','#expand-svgrepo-com');
+      fullscreenBtn.classList.remove('btn-collapse')
+      fullscreenBtn.classList.add('btn-expand')
+      displayModeBtn.style.display = 'block';
+  }
+});
 video.addEventListener('dblclick',()=>{
   if(isMobile())
     return
@@ -178,8 +187,10 @@ document.addEventListener('keyup',(e)=>{
     case 'Space' :e.preventDefault();PlayToggle(); break;
     case 'KeyM' : e.preventDefault();MuteToggle();break;
   }
+  
 })
 document.addEventListener('keydown',(e)=>{ 
+
   if (e.code === "Space") {
     e.preventDefault(); // جلوگیری از اسکرول صفحه
 }
@@ -193,6 +204,7 @@ document.addEventListener('keydown',(e)=>{
     case 'ArrowUp' : e.preventDefault();LoudVolume();break;
   }
 })
+
 function showVidbarAndBtns(){
   if(settingPortraitActive)
     return
@@ -302,8 +314,15 @@ let timeoutBack5,timeoutForward5;
 let tF=5,tB=5; // for time backward and forward time in phone
 function Forward5s(ismobile){
   video.currentTime = parseInt(video.currentTime) + 5.5;
-  if(!ismobile)
+  if(!ismobile){
     animationBtnFB('forward','btnForward');
+    if(video.paused)
+      return
+    clearTimeout(sF)
+    sF = setTimeout(()=>{
+      hideVidbarAndBtns()
+    },2000)
+  }
   else{
     let timeForward = document.querySelector('.btnPhoneTimeForward');
     timeForward.innerHTML = '+'+tF + 's'
@@ -326,8 +345,15 @@ function Forward5s(ismobile){
 }
 function Back5s(ismobile){
   video.currentTime = parseInt(video.currentTime) - 5;
-  if(!ismobile)
+  if(!ismobile){
     animationBtnFB('backward','btnBackward');
+    if(video.paused)
+      return
+    clearTimeout(sF)
+    sF = setTimeout(()=>{
+      hideVidbarAndBtns()
+    },2000)
+  }
   else{
     let timeBackward = document.querySelector('.btnPhoneTimeBackward');
     timeBackward.innerHTML = '-'+tB+'s';
@@ -409,6 +435,10 @@ function FullScreenToggle(){
       fullscreenBtn.classList.remove('btn-collapse')
       fullscreenBtn.classList.add('btn-expand')
       displayModeBtn.style.display = 'block';
+      if(!isMobile()){
+        vidBarTop.style.opacity = 0;
+        vidBarTop.style.zIndex = -1;
+      }
       if(isOnDisplayMode)
         video.style = 'object-fit:contain';
       if (isMobile()) {
